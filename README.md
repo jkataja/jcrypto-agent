@@ -1,5 +1,7 @@
 # jcrypto-agent
 
+![Java CI with Maven](https://github.com/jkataja/jcrypto-agent/workflows/Java%20CI%20with%20Maven/badge.svg)
+
 ## Accelerate your Java applications' crypto with no code changes
 
 **jcrypto-agent** installs accelerated cryptography to JVM at application starting time.
