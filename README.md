@@ -55,8 +55,7 @@ Donwload other versions and older versoins from [releases page](https://github.c
 ### Install
 
 To install the agent, add the `-javaagent` argument to your JVM command line arguments.
-Specify path to the agent JAR with version.
-For example:
+Specify path to the agent JAR with version, for example:
 
 ```sh
 -javaagent:jcrypto-agent-0.20201213.jar
@@ -64,8 +63,16 @@ For example:
 
 The agent runs before your application's `main` method, configuring ACCP as the crypto provider.
 It then verifies that ACCP is installed as the highest priority crypto provider.
+If the verification was successful, the agent then prints crypto provider identifier, version number and self-check status to stderr, for example:
+
+```
+AmazonCorrettoCryptoProvider version 1.5.0
+AmazonCorrettoCryptoProvider self-check PASSED
+```
+
 Optionally, add the `assert` option to agent options e.g. `-javaagent:jcrypto-agent-0.20201213.jar=assert` to also assert the installation is successful or throw an exception.
 Without this option, the crypto provider will grafecully fall back to the default provider.
+
 
 ## Benchmarking
 
