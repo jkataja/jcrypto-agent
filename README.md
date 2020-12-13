@@ -2,16 +2,16 @@
 
 ![Java CI with Maven](https://github.com/jkataja/jcrypto-agent/workflows/Java%20CI%20with%20Maven/badge.svg)
 
-## Accelerate your Java applications' crypto with no code changes
+## Accelerate your Java crypto performance with no code changes
 
-**jcrypto-agent** installs accelerated cryptography to JVM at application starting time.
+**jcrypto-agent** installs accelerated cryptography provider to JVM at application starting time.
 It is a Java agent that runs before your application.
-This means your applications' crypto performance can be improved without needing code changes, requiring rebuilds, or having to maintain build variations for different platforms.
+This means your application's crypto performance can be improved without needing code changes, requiring rebuilds, or having to maintain build variations for different platforms.
 
 The agent installs the [Amazon Corretto Crypto Provider (ACCP)](https://github.com/corretto/amazon-corretto-crypto-provider) cryptography provider.
 This replaces Java cryptography algorithms with those wrapped from the natively compiled [OpenSSL](https://www.openssl.org/) cryptography library.
 Native code then uses CPU instructions for hardware-accelerated crypto.
-The performance gains and reduced energy usage vary by application and their use of crypto algorithms.
+The performance gains and reduced energy usage vary by application and its use of crypto algorithms.
 
 The agent also performs safety checks, making sure the crypto provider is compatible with your platform.
 
@@ -52,10 +52,28 @@ It then verifies that ACCP is installed as the highest priority crypto provider.
 Optionally, add the `assert` option to agent options e.g. `-javaagent:jcrypto-agent-0.20201213.jar=assert` to also assert the installation is successful or throw an exception.
 Without this option, the crypto provider will grafecully fall back to the default provider.
 
+## Benchmarking
+
+The following barchart shows **jcrypto-agent** effect on performace when measured by `HmacSHA512` message authentication algorithm using 1024 size input,
+against default crypto provider,
+and when running on OpenJDK 8 and OpenJDK 11 respectively.
+Units are us/op, where lower is better
+
+![HmacSHA512 benchmarks for jcrypto-agent in us/op](HmacSHA512.png)
+
+In this case, performance on OpenJDK 8 was **improved by over 100%**,
+while performance on OpenJDK 11 was **improved by 27%**.
+Applications that use crypto extensively should see the highest performance improvements, for example when terminating TLS connections.
+Your mileage may vary.
+
+Benchmarks code was based on [GitHub repo ecki/jmhbench-cryptospeed](https://github.com/ecki/jmhbench-cryptospeed) that times crypto primitives on Java.
+The code was modified by removing the other alternative crypto providers from benchamar runs.
+The tests were run on ThinkPad T480 with Intel i5-8350U CPU, running Fedora 32 and either OpenJDK 11.0.9 or OpenJDK 1.8.0_272.
+
 ## Resources
 
- - [GitHub corretto/amazon-corretto-crypto-provider](https://github.com/corretto/amazon-corretto-crypto-provider)
- - [GitHub openssl/openssl](https://github.com/openssl/openssl)
+ - [GitHub repo corretto/amazon-corretto-crypto-provider](https://github.com/corretto/amazon-corretto-crypto-provider)
+ - [GitHub repo openssl/openssl](https://github.com/openssl/openssl)
  - [OpenSSL](https://www.openssl.org/) TLS/SSL and crypto library
 
 ## Meta
