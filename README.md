@@ -32,7 +32,12 @@ ARM architecture support will be added with runtime linking when this becomes ge
 
 ### Install
 
-Download the latest release from the [releases page](https://github.com/jkataja/jcrypto-agent/releases).
+Download the latest version from [releases page](https://github.com/jkataja/jcrypto-agent/releases)
+or using:
+
+```sh
+$ wget https://github.com/jkataja/jcrypto-agent/releases/download/v0.20201213/jcrypto-agent-0.20201213.jar
+```
 
 To install the agent, add the `-javaagent` argument to your JVM command line arguments.
 Specify path to the agent JAR with version.
