@@ -31,6 +31,17 @@ The use of libc prevents the use of non-libc based distributions, such as Alpine
 
 ARM architecture support will be added with runtime linking when this becomes generally available in ACCP.
 
+### Build (optional) 
+
+Build this agent requires JDK 8 or newer and Maven. Build by using:
+
+```sh
+$ mvn package
+```
+
+The resulting agent JAR is in `target/` path.
+
+
 ### Install
 
 Download the latest version from [releases page](https://github.com/jkataja/jcrypto-agent/releases)
