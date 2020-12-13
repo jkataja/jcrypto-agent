@@ -44,13 +44,13 @@ The resulting agent JAR is in `target/` path.
 
 ### Download
 
-Download the current versoin [jcrypto-agent-0.20201213.jar](https://github.com/jkataja/jcrypto-agent/releases/download/v0.20201213/jcrypto-agent-0.20201213.jar) or using:
+Download the current version [jcrypto-agent-0.20201213.jar](https://github.com/jkataja/jcrypto-agent/releases/download/v0.20201213/jcrypto-agent-0.20201213.jar) or using:
 
 ```sh
 $ wget https://github.com/jkataja/jcrypto-agent/releases/download/v0.20201213/jcrypto-agent-0.20201213.jar
 ```
 
-Donwload other versions and older versoins from [releases page](https://github.com/jkataja/jcrypto-agent/releases).
+Donwload other versions and older versions from [releases page](https://github.com/jkataja/jcrypto-agent/releases).
 
 ### Install
 
