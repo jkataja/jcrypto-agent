@@ -66,15 +66,15 @@ Without this option, the crypto provider will grafecully fall back to the defaul
 
 ## Benchmarking
 
-The following barchart shows **jcrypto-agent** effect on performace when measured by `HmacSHA512` message authentication algorithm using 1024 size input,
+The following barchart shows **jcrypto-agent** effect on performace when measured by the runtime of`HmacSHA512` message authentication algorithm with 1024 bytes size input,
 against default crypto provider,
 and when running on OpenJDK 8 and OpenJDK 11 respectively.
 Units are us/op, where lower is better
 
 ![HmacSHA512 benchmarks for jcrypto-agent in us/op](HmacSHA512.png)
 
-In this case, performance on OpenJDK 8 was **improved by over 100%**,
-while performance on OpenJDK 11 was **improved by 27%**.
+In this case, runtime of the algorithm was **reduced by over 50%** on OpenJDK 8,
+while runtime on was **reduced by 20%** on OpenJDK 11.
 Applications that use crypto extensively should see the highest performance improvements, for example when terminating TLS connections.
 Your mileage may vary.
 
