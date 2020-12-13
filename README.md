@@ -42,14 +42,17 @@ $ mvn package
 The resulting agent JAR is in `target/` path.
 
 
-### Install
+### Download
 
-Download the latest version from [releases page](https://github.com/jkataja/jcrypto-agent/releases)
-or using:
+Download the current versoin [jcrypto-agent-0.20201213.jar](https://github.com/jkataja/jcrypto-agent/releases/download/v0.20201213/jcrypto-agent-0.20201213.jar) or using:
 
 ```sh
 $ wget https://github.com/jkataja/jcrypto-agent/releases/download/v0.20201213/jcrypto-agent-0.20201213.jar
 ```
+
+Donwload other versions and older versoins from [releases page](https://github.com/jkataja/jcrypto-agent/releases).
+
+### Install
 
 To install the agent, add the `-javaagent` argument to your JVM command line arguments.
 Specify path to the agent JAR with version.
