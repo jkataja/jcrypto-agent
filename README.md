@@ -5,8 +5,9 @@
 ## Accelerate your Java crypto performance with no code changes
 
 **jcrypto-agent** installs accelerated cryptography provider to JVM at application starting time.
-It is a Java agent that runs before your application.
+It is a Java agent that runs before your application, and is installed by adding a Java command line option.
 This means your application's crypto performance can be improved without needing code changes, requiring rebuilds, or having to maintain build variations for different platforms.
+If the agent causes compatibility issues, for example after installing distro updates, it can be removed just as easily.
 
 The agent installs the [Amazon Corretto Crypto Provider (ACCP)](https://github.com/corretto/amazon-corretto-crypto-provider) cryptography provider.
 This replaces Java cryptography algorithms with those wrapped from the natively compiled [OpenSSL](https://www.openssl.org/) cryptography library.
