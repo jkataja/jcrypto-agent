@@ -30,14 +30,12 @@ The use of libc prevents the use of non-libc based distributions, such as Alpine
 
 ARM architecture support will be added with runtime linking when this becomes generally available in ACCP.
 
-### Download the agent
+### Install
 
-TODO see releases page
-
-### Install the agent
+Download the latest release from the [releases page](https://github.com/jkataja/jcrypto-agent/releases).
 
 To install the agent, add the `-javaagent` argument to your JVM command line arguments.
-Specify path to the agent JAR.
+Specify path to the agent JAR with version.
 For example:
 
 ```sh
@@ -48,11 +46,6 @@ The agent runs before your application's `main` method, configuring ACCP as the 
 It then verifies that ACCP is installed as the highest priority crypto provider.
 Optionally, add the `assert` option to agent options e.g. `-javaagent:jcrypto-agent-0.20201213.jar=assert` to also assert the installation is successful or throw an exception.
 Without this option, the crypto provider will grafecully fall back to the default provider.
-
-## Release History
-
-* `0.20201213`
-    * Initial version using the ACCP version `1.5.0`
 
 ## Resources
 
