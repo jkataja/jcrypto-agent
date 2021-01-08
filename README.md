@@ -41,7 +41,6 @@ $ mvn package
 
 The resulting agent JAR is in `target/` path.
 
-
 ### Download
 
 Download the current version [jcrypto-agent-0.20201213.jar](https://github.com/jkataja/jcrypto-agent/releases/download/v0.20201213/jcrypto-agent-0.20201213.jar) or using:
@@ -62,7 +61,7 @@ Specify path to the agent JAR with version, for example:
 ```
 
 The agent runs before your application's `main` method, configuring ACCP as the crypto provider.
-It then verifies that ACCP is installed as the highest priority crypto provider.
+It then verifies that ACCP is installed as the highest priority in crypto provider chain.
 If the verification was successful, the agent then prints crypto provider identifier, version number and self-check status to stderr, for example:
 
 ```
@@ -76,7 +75,7 @@ Without this option, the crypto provider will grafecully fall back to the defaul
 
 ## Benchmarking
 
-The following barchart shows **jcrypto-agent** effect on performace when measured by the runtime of`HmacSHA512` message authentication algorithm with 1024 bytes size input,
+The following chart shows **jcrypto-agent** effect on performace when measured by the runtime of`HmacSHA512` message authentication algorithm with 1024 bytes size input,
 against default crypto provider,
 and when running on OpenJDK 8 and OpenJDK 11 respectively.
 Units are us/op, where lower is better
@@ -89,7 +88,7 @@ Applications that use crypto extensively should see the highest performance impr
 Your mileage may vary.
 
 Benchmarks code was based on [GitHub repo ecki/jmhbench-cryptospeed](https://github.com/ecki/jmhbench-cryptospeed) that times crypto primitives on Java.
-The code was modified by removing the other alternative crypto providers from benchamar runs.
+The code was modified by removing the other alternative crypto providers from benchamark runs.
 The tests were run on ThinkPad T480 with Intel i5-8350U CPU, running Fedora 32 and either OpenJDK 11.0.9 or OpenJDK 1.8.0_272.
 
 ## Resources
