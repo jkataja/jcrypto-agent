@@ -6,10 +6,10 @@
 
     <groupId>com.github.jkataja</groupId>
     <artifactId>jcrypto-agent</artifactId>
-    <version>0.20201213</version>
+    <version>0.20210318</version>
 
     <properties>
-        <accp.version>1.5.0</accp.version>
+        <accp.version>1.6.0</accp.version>
 
         <premain-class>com.github.jkataja.jcryptoagent.Agent</premain-class>
 
